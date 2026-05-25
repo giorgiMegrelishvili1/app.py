@@ -240,7 +240,7 @@ if uploaded_file:
 
         brand_summary.columns = ['Brand', 'Products', 'Avg Price (₾)', 'Min Price (₾)', 'Max Price (₾)', 'Total Value (₾)']
         brand_summary = brand_summary.sort_values('Products', ascending=False)
-        st.dataframe(brand_summary, use_container_width=True, index=False)
+        st.dataframe(brand_summary.set_index('Brand'), use_container_width=True)
 
         # ──────────────────────────────────────
         # DOWNLOAD DATA
